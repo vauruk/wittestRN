@@ -1,11 +1,18 @@
-import { NewsResponse } from '../../../store/news/types';
+import { WeatherResponse } from '../../../store/weather/types';
 import HttpClient from '../../ApiVK';
+import { Config } from '../../../config';
 
 interface Weather { }
 class WeatherService {
-    static listData(): Promise<NewsResponse> {
-        return HttpClient.get<Weather, NewsResponse>({
+    static listData(): Promise<WeatherResponse> {
+        return HttpClient.get<Weather, WeatherResponse>({
             path: '/data.json',
+            token: undefined,
+        });
+    }
+    static getWheater(idCity: string): Promise<WeatherResponse> {
+        return HttpClient.get<Weather, WeatherResponse>({
+            path: `/weather?q=${idCity}&appid=${Config.apiKey}`,
             token: undefined,
         });
     }

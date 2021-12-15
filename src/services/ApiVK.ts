@@ -7,8 +7,8 @@ const optionsAuth = (token: string): AxiosRequestConfig => {
         baseURL: Config.apiURL,
         timeout: 30000,
         headers: {
-            'Content-Type': 'application/json',
-            Autorization: `Bearer ${token}`,
+            //'Content-Type': 'application/json',
+            // Autorization: `Bearer ${token}`,
         },
     };
 };
@@ -17,7 +17,7 @@ const optionsNoAuth = (): AxiosRequestConfig => {
         baseURL: Config.apiURL,
         timeout: 30000,
         headers: {
-            'Content-Type': 'application/json',
+            //   'Content-Type': 'application/json',
         },
     };
 };
@@ -50,6 +50,7 @@ export default class HttpClient {
             axios
                 .get(path, options)
                 .then((response: any) => {
+                    console.log('DATA:', response);
                     resolve(response.data);
                 })
                 .catch((error: any) => reject(error));

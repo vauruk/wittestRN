@@ -3,52 +3,52 @@ import { City } from '../city/types';
 export const cityList: [City] = [
     {
         name: 'Lisboa',
-        id: 'LB',
+        id: 'Lisbom',
         code: 'pt',
     },
     {
         name: 'Madrid',
-        id: 'MD',
+        id: 'Madrid',
         code: 'es',
     },
     {
         name: 'Paris',
-        id: 'PRI',
+        id: 'Paris',
         code: 'fr',
     },
     {
         name: 'Berlin',
-        id: 'BRLN',
+        id: 'Berlin',
         code: 'de',
     },
     {
         name: 'Copenhaga',
-        id: 'CPNH',
+        id: 'Copenhagen',
         code: 'dk',
     },
     {
         name: 'Roma',
-        id: 'RM',
+        id: 'Rome',
         code: 'it',
     },
     {
         name: 'Londres',
-        id: 'LOD',
+        id: 'London',
         code: 'uk',
     },
     {
         name: 'Duplin',
-        id: 'DBL',
+        id: 'Dublin',
         code: 'ie',
     },
     {
         name: 'Praga',
-        id: 'PRG',
+        id: 'Prague',
         code: 'cz',
     },
     {
         name: 'Viena',
-        id: 'VEN',
+        id: 'Vienna',
         code: 'at',
     },
     ,

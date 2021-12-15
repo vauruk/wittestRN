@@ -6,18 +6,16 @@ import { WeatherService } from '../../services';
 export const initialState: FormState = {
     loading: false,
     submitError: undefined,
-    weatherList: undefined,
+    weather: undefined,
 };
 
 export const fetchWeatherList = createAsyncThunk(
-    'weatherForm/list',
-    async (args = undefined, thunkAPI) => {
-        const {
-            newsForm: { },
-        } = thunkAPI.getState() as RootState;
-
+    'weatherForm/fetchWeatherList',
+    async (idCity: string, thunkAPI) => {
+        const { wheather } = thunkAPI.getState() as RootState;
+        console.log('fetchWeatherList idCity');
         try {
-            const dataReturn = WeatherService.listData();
+            const dataReturn = await WeatherService.getWheater(idCity);
             return dataReturn;
         } catch (error) {
             const {
@@ -28,8 +26,8 @@ export const fetchWeatherList = createAsyncThunk(
     },
 );
 
-export const newsFormSlice = createSlice({
-    name: 'newsForm',
+export const weatherFormSlice = createSlice({
+    name: 'weatherForm',
     initialState,
     reducers: {},
     extraReducers: (builder: any) => {
@@ -37,15 +35,13 @@ export const newsFormSlice = createSlice({
             const newstate = { ...state };
             newstate.submitError = undefined;
             newstate.loading = true;
+            return newstate;
         });
         builder.addCase(
             fetchWeatherList.fulfilled,
             (state: FormState, action: PayloadAction<WeatherResponse>) => {
                 const newstate = { ...state };
-                const { weather } = action.payload;
-                newstate.submitError = undefined;
-                newstate.weatherList = weather;
-
+                newstate.weather = action.payload;
                 newstate.loading = false;
                 return newstate;
             },
@@ -54,8 +50,9 @@ export const newsFormSlice = createSlice({
             const newstate = { ...state };
             newstate.submitError = 'Error qualquer ';
             newstate.loading = false;
+            return newstate;
         });
     },
 });
 
-export default newsFormSlice.reducer;
+export default weatherFormSlice.reducer;

@@ -22,7 +22,7 @@ const routes: StackRoute[] = [
     },
     {
         name: CityRoutes.CityWeather,
-        component: () => <CityWeather />,
+        component: props => <CityWeather {...props} />,
         options: {
             animationEnabled: true,
             headerTransparent: false,

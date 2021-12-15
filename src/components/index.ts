@@ -5,3 +5,4 @@ export { default as ColVK } from './ColVK';
 export { default as AlertVK } from './AlertVK';
 export { default as ScrollViewVK } from './ScrollViewVK';
 export { default as ItemCityVK } from './ItemCityVK';
+export { default as ItemWeatherVK } from './ItemWeatherVK';

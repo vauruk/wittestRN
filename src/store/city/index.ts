@@ -1,9 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { City, CityResponse, FormState } from './types';
 
-import moment from 'moment-timezone';
 import { cityList } from '../mock/cityList';
-import loadGravatar from '../../util/gravatar';
+import { CityService } from '../../services';
 
 export const initialState: FormState = {
     loading: false,
@@ -20,7 +19,7 @@ export const fetchCityList = createAsyncThunk(
         } = thunkAPI.getState() as RootState;
 
         try {
-            const dataReturn = NewsService.listData();
+            const dataReturn = CityService.listData();
             return dataReturn;
         } catch (error) {
             const {
@@ -34,12 +33,20 @@ export const fetchCityList = createAsyncThunk(
 export const cityFormSlice = createSlice({
     name: 'cityForm',
     initialState,
-    reducers: {},
+    reducers: {
+        setPostTextAction(state: FormState, action: PayloadAction<TextPost>) {
+            const { value } = action.payload;
+            const newstate = { ...state };
+            //newstate.textPost = value;
+            return newstate;
+        },
+    },
     extraReducers: (builder: any) => {
         builder.addCase(fetchCityList.pending, (state: FormState) => {
             const newstate = { ...state };
             newstate.submitError = undefined;
             newstate.loading = true;
+            return newstate;
         });
         builder.addCase(
             fetchCityList.fulfilled,
@@ -57,6 +64,7 @@ export const cityFormSlice = createSlice({
             const newstate = { ...state };
             newstate.submitError = 'Error qualquer ';
             newstate.loading = false;
+            return newstate;
         });
     },
 });

@@ -8,20 +8,17 @@ import {
     TextBlog,
     ColDate,
     ColAction,
-    IconVK,
-    ImageItemVK,
     TouchableHighlightPk,
+    IconVK,
 } from './styles';
 
 import moment from 'moment-timezone';
-import { Config } from '../../config';
-import { City } from '../../store/city/types';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { Weather } from '../../store/weather/types';
 
-const ItemCityVK: React.FC<Props> = ({
+const ItemWeatherVK: React.FC<Props> = ({
     testID,
     style,
-    city,
+    item,
     onEdit,
     onDetail,
     onDelete,
@@ -36,21 +33,21 @@ const ItemCityVK: React.FC<Props> = ({
         return msg;
     };
 
-    const _onDelete = (item: City) => {
+    const _onDelete = (item: Weather) => {
         onDelete?.(item);
     };
 
-    const _onEdit = (item: City) => {
+    const _onEdit = (item: Weather) => {
         console.log('Edit');
         onEdit?.(item);
     };
-    const _onDetail = (item: City) => {
+    const _onDetail = (item: Weather) => {
         console.log('onDetail');
         onDetail?.(item);
     };
     const getUrl = code => {
         console.log('code', `../../assets/${code}.png`);
-        //  return require(`../../assets/${code}.png`);
+        // return require(`../../assets/${code}.png`);
     };
 
     return (
@@ -58,16 +55,11 @@ const ItemCityVK: React.FC<Props> = ({
             <TouchableHighlightPk onPress={_onDetail}>
                 <ContentVK testID={testID} style={style}>
                     <Row>
-                        <ColA flex={0.3}>
-                            {/* <ImageItemVK
-                                source={require('../../assets/es.png')}
-                                width={80}
-                                height={80}
-                            />
-                            {getUrl(city.code)} */}
+                        <ColA flex={0.15}>
+                            <IconVK name="cloud" size={18} />
                         </ColA>
                         <ColB flex={0.7}>
-                            <TextBlog>{city.name}</TextBlog>
+                            <TextBlog>{item.name}</TextBlog>
                         </ColB>
                     </Row>
                     <Row>
@@ -80,4 +72,4 @@ const ItemCityVK: React.FC<Props> = ({
     );
 };
 
-export default ItemCityVK;
+export default ItemWeatherVK;

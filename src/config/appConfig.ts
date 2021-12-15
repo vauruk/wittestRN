@@ -1,5 +1,6 @@
-import config from 'react-native-config';
+import Config from 'react-native-config';
 
 export default {
-    apiURL: config.API_URL,
+    apiURL: Config.API_URL,
+    apiKey: Config.API_KEY,
 };

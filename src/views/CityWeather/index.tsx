@@ -2,22 +2,17 @@ import React, { useEffect } from 'react';
 
 import { Container, ScrollViewAppVk } from './styles';
 
-import { useNavigation } from '@react-navigation/native';
-import { City } from '../../store/city/types';
-import { CityRoutes } from '../../routes/City/types';
+import { Props } from '../../routes/City/types';
 import { useAppDispatch, useTypedSelector } from '../../store';
-//import { authenticate, setField, startAdmin } from '../../store/login';
-import { userAlertVK } from '../../hooks';
 import { TextBlog } from '../../components/ItemCityVK/styles';
-interface Props {
-    idCity: string;
-}
-const CityList: React.FC<Props> = (props: Props) => {
-    console.log('route', props.route);
-    //const {idCity} = route.params;
-    const navigation = useNavigation();
+import { ItemWeatherVK } from '../../components';
+import { fetchWeatherList } from '../../store/weather';
+
+const CityWeather: React.FC<Props> = (props: Props) => {
+    const { idCity } = props.route.params;
     const dispatch = useAppDispatch();
-    const cityDetail = useTypedSelector(state => state.cityForm.cityDetail);
+    const weather = useTypedSelector(state => state.weatherForm.weather);
+    const loading = useTypedSelector(state => state.weatherForm.loading);
     //const submitError = useTypedSelector(state => state.loginForm.submitError);
     //const typeMessage = useTypedSelector(state => state.loginForm.typeMessage);
     // const alert = userAlertVK({
@@ -26,18 +21,20 @@ const CityList: React.FC<Props> = (props: Props) => {
     // });
 
     useEffect(() => {
-        //dispatch(startAdmin());
-    });
+        //   if (!weather) {
+        dispatch(fetchWeatherList(idCity));
+        //   }
+    }, []);
 
-    console.log('cityDetail', cityDetail);
-
+    console.log('cityDetail', loading, idCity, weather);
     return (
         <Container>
             <ScrollViewAppVk>
-                <TextBlog>xx</TextBlog>
+                {loading && <TextBlog>Loading...</TextBlog>}
+                {!loading && <ItemWeatherVK item={weather} />}
             </ScrollViewAppVk>
         </Container>
     );
 };
 
-export default CityList;
+export default CityWeather;

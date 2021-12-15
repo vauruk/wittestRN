@@ -6,9 +6,11 @@
 
 import { combineReducers } from '@reduxjs/toolkit';
 import cityForm from '../city';
+import weatherForm from '../weather';
 
 const rootReducer = combineReducers({
     cityForm,
+    weatherForm,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
