@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components/native';
-import { RowVK, ColVK, ImageVK } from '../index';
+import { RowVK, ColVK } from '../index';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import { Props } from './types';
 import { TouchableHighlight } from 'react-native';
 
 const meNoColor = css`
-  ${({ theme }) => theme.gray2}
+    ${({ theme }) => theme.gray2}
 `;
 const meColor = css`
-  ${({ theme }) => theme.white}
+    ${({ theme }) => theme.white}
 `;
 const colorSelector = (me: boolean) => {
   if (me) {
@@ -19,41 +19,40 @@ const colorSelector = (me: boolean) => {
 };
 
 const ContentVK = styled.View<Pick<Props>>`
-  width: 100%;
-  border-width: 0.5px;
-  border-color: ${(props: any) => props.theme.ligthGrayColor};
+    width: 100%;
+    border-width: 0.5px;
+    border-color: ${(props: any) => props.theme.ligthGrayColor};
 `;
 
-const ImageItemVK = styled(ImageVK)``;
 const Row = styled(RowVK)`
-  padding-right: 10px;
-  padding-top: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
 `;
 const ColA = styled(ColVK)``;
 const TouchableHighlightPk = styled(TouchableHighlight).attrs(({ theme }) => ({
   underlayColor: theme.gray2,
 }))`
-  width: 100%;
+    width: 100%;
 `;
 const ColB = styled(ColVK)`
-  align-items: flex-start;
+    align-items: flex-start;
 `;
 const ColDate = styled(ColVK)`
-  padding-left: 10px;
-  align-items: flex-start;
-  justify-content: center;
+    padding-left: 10px;
+    align-items: flex-start;
+    justify-content: center;
 `;
 const ColAction = styled(ColVK)`
-  align-content: flex-end;
-  align-items: flex-end;
-  justify-content: center;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
 `;
 const TextBlog = styled.Text`
-  color: ${(props: any) => props.theme.text.color};
-  font-size: ${(props: any) => props.theme.text.fontSize}px;
+    color: ${(props: any) => props.theme.text.color};
+    font-size: ${(props: any) => props.theme.text.fontSize}px;
 `;
 const TextCreated = styled.Text`
-  color: ${(props: any) => props.theme.text.color};
+    color: ${(props: any) => props.theme.text.color};
 `;
 
 const ButtonIcon = styled.TouchableOpacity`
@@ -84,6 +83,5 @@ export {
   ColIcon,
   ColAction,
   RowIcon,
-  ImageItemVK,
   TouchableHighlightPk,
 };

@@ -13,7 +13,6 @@ export const fetchWeatherList = createAsyncThunk(
     'weatherForm/fetchWeatherList',
     async (idCity: string, thunkAPI) => {
         const { wheather } = thunkAPI.getState() as RootState;
-        console.log('fetchWeatherList idCity');
         try {
             const dataReturn = await WeatherService.getWheater(idCity);
             return dataReturn;

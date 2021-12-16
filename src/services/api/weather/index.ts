@@ -12,7 +12,7 @@ class WeatherService {
     }
     static getWheater(idCity: string): Promise<WeatherResponse> {
         return HttpClient.get<Weather, WeatherResponse>({
-            path: `/weather?q=${idCity}&appid=${Config.apiKey}`,
+            path: `/forecast?q=${idCity}&units=metric&appid=${Config.apiKey}`,
             token: undefined,
         });
     }

@@ -1,11 +1,11 @@
 import { StyleProp, ViewStyle } from 'react-native';
-import { City } from '../../store/city/types';
+import { City } from '../../store/weather/types';
+import { ForecastInfo } from '../../store/weather/types';
 
 export interface Props {
     testID?: string;
     style?: StyleProp<ViewStyle>;
-    item: City;
-    onEdit?: (item: City) => void;
-    onDetail?: (item: City) => void;
-    onDelete?: (item: City) => void;
+    item: ForecastInfo;
+    city: City;
+    onDetail?: (item: ForecastInfo) => void;
 }

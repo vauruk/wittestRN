@@ -2,6 +2,7 @@ import React from 'react';
 import { StackRoute } from 'routes/types';
 import { CityRoutes } from './types';
 import { CityList, Splash, CityWeather } from '../../views';
+import { color } from '../../theme';
 
 const routes: StackRoute[] = [
     {
@@ -17,7 +18,13 @@ const routes: StackRoute[] = [
         component: () => <CityList />,
         options: {
             animationEnabled: true,
-            headerTransparent: true,
+            headerShown: true,
+            headerTitle: 'City',
+            headerStyle: {
+                backgroundColor: color.primary,
+            },
+            headerTintColor: color.white,
+            headerBackVisible: false,
         },
     },
     {
@@ -27,7 +34,11 @@ const routes: StackRoute[] = [
             animationEnabled: true,
             headerTransparent: false,
             headerShown: true,
-            headerTitle: 'Weather',
+            headerTitle: 'Forecasts',
+            headerStyle: {
+                backgroundColor: color.primary,
+            },
+            headerTintColor: color.white,
         },
     },
 ];

@@ -13,25 +13,23 @@ const CityWeather: React.FC<Props> = (props: Props) => {
     const dispatch = useAppDispatch();
     const weather = useTypedSelector(state => state.weatherForm.weather);
     const loading = useTypedSelector(state => state.weatherForm.loading);
-    //const submitError = useTypedSelector(state => state.loginForm.submitError);
-    //const typeMessage = useTypedSelector(state => state.loginForm.typeMessage);
-    // const alert = userAlertVK({
-    //     type: typeMessage,
-    //     message: submitError,
-    // });
 
     useEffect(() => {
-        //   if (!weather) {
         dispatch(fetchWeatherList(idCity));
-        //   }
     }, []);
 
-    console.log('cityDetail', loading, idCity, weather);
     return (
         <Container>
             <ScrollViewAppVk>
                 {loading && <TextBlog>Loading...</TextBlog>}
-                {!loading && <ItemWeatherVK item={weather} />}
+                {!loading &&
+                    weather?.list.map((item, index) => (
+                        <ItemWeatherVK
+                            item={item}
+                            city={weather.city}
+                            key={index}
+                        />
+                    ))}
             </ScrollViewAppVk>
         </Container>
     );

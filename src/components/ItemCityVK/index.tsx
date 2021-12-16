@@ -8,8 +8,6 @@ import {
     TextBlog,
     ColDate,
     ColAction,
-    IconVK,
-    ImageItemVK,
     TouchableHighlightPk,
 } from './styles';
 
@@ -26,26 +24,7 @@ const ItemCityVK: React.FC<Props> = ({
     onDetail,
     onDelete,
 }: Props) => {
-    const renderMessage = (message: string) => {
-        const numChar = 100; //Number(Config.numChar);
-        let msg = message;
-        if (message.length > numChar) {
-            msg += msg.substring(0, numChar);
-            msg += ' ...';
-        }
-        return msg;
-    };
-
-    const _onDelete = (item: City) => {
-        onDelete?.(item);
-    };
-
-    const _onEdit = (item: City) => {
-        console.log('Edit');
-        onEdit?.(item);
-    };
     const _onDetail = (item: City) => {
-        console.log('onDetail');
         onDetail?.(item);
     };
     const getUrl = code => {
@@ -58,7 +37,7 @@ const ItemCityVK: React.FC<Props> = ({
             <TouchableHighlightPk onPress={_onDetail}>
                 <ContentVK testID={testID} style={style}>
                     <Row>
-                        <ColA flex={0.3}>
+                        <ColA flex={0.1}>
                             {/* <ImageItemVK
                                 source={require('../../assets/es.png')}
                                 width={80}
@@ -66,7 +45,7 @@ const ItemCityVK: React.FC<Props> = ({
                             />
                             {getUrl(city.code)} */}
                         </ColA>
-                        <ColB flex={0.7}>
+                        <ColB flex={0.9}>
                             <TextBlog>{city.name}</TextBlog>
                         </ColB>
                     </Row>

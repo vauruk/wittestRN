@@ -50,7 +50,6 @@ export default class HttpClient {
             axios
                 .get(path, options)
                 .then((response: any) => {
-                    console.log('DATA:', response);
                     resolve(response.data);
                 })
                 .catch((error: any) => reject(error));

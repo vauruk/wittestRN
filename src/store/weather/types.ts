@@ -1,23 +1,50 @@
 export interface WeatherResponse {
-    dt: number;
+    message: number;
+    cnt: number;
+    list: [ForecastInfo];
+    city: City;
+}
+interface MainInfo {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    sea_level: number;
+    grnd_level: number;
+    humidity: number;
+    temp_kf: number;
+}
+
+export interface City {
     id: number;
-    wind: Wind;
     name: string;
-    base: string;
-    weather: [WeatherRes];
+    country: string;
+    population: number;
+    timezone: number;
+    sunrise: number;
+    sunset: number;
 }
 
-interface Wind {
-    deg: number;
-    gust: number;
-    speed: number;
-}
-
-interface WeatherRes {
-    description: string;
-    icon: string;
+interface WeatherInfo {
     id: number;
     main: string;
+    description: string;
+    icon: string;
+}
+interface Wind {
+    speed: number;
+    deg: number;
+    gust: number;
+}
+export interface ForecastInfo {
+    dt: number;
+    main: MainInfo;
+    weather: [WeatherInfo];
+    wind: Wind;
+    visibility: number;
+    pop: number;
+    dt_txt: string;
 }
 
 export interface FormState {
