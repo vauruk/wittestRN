@@ -57,6 +57,6 @@ Métricas de avaliação
 Deadline
 
 O resultado do challenge (link para o website e o código fonte utilizado) deve ser enviado para o e-
-mail: jobs@wit-software.com. Deves colocar no subject “Challenge React Native Development” e
+mail: xxx. Deves colocar no subject “Challenge React Native Development” e
 
 no corpo do e-mail deves indicar o no de horas total utilizado na realização do desafio.
