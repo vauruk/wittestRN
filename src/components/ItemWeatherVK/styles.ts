@@ -51,7 +51,6 @@ const ColB = styled(ColVK)`
 `;
 const ColC = styled(ColVK)`
     align-items: center;
-    justify-content: center;
 `;
 const ColDate = styled(ColVK)`
     padding-left: 10px;

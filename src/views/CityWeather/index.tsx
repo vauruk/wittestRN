@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Container, ScrollViewAppVk } from './styles';
+import { Container, ScrollViewAppVk, ActivityIndicatorVK } from './styles';
 
 import { Props } from '../../routes/City/types';
 import { useAppDispatch, useTypedSelector } from '../../store';
@@ -21,7 +21,7 @@ const CityWeather: React.FC<Props> = (props: Props) => {
     return (
         <Container>
             <ScrollViewAppVk>
-                {loading && <TextBlog>Loading...</TextBlog>}
+                {loading && <ActivityIndicatorVK size="large" />}
                 {!loading &&
                     weather?.list.map((item, index) => (
                         <ItemWeatherVK

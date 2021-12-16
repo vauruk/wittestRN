@@ -18,6 +18,7 @@ import { CityRoutes } from '../../routes/City/types';
 import { Props } from './types';
 import { IconVK } from '../common/styles';
 import vanderson from '../../assets/vanderson.png';
+import LottieView from 'lottie-react-native';
 
 const Splash: React.FC<Props> = (props: Props) => {
     const navigation = useNavigation();
@@ -31,33 +32,34 @@ const Splash: React.FC<Props> = (props: Props) => {
         await Linking.openURL(gitHub);
     }, [gitHub]);
 
-    return (
-        <Container>
-            <Content>
-                <ImageVK source={vanderson} width={250} height={300} />
-                <Title>Vanderson de Moura Vauruk</Title>
-                <Row>
-                    <ColA flex={0.2}>
-                        <IconVK name="at" size={30} />
-                    </ColA>
-                    <ColB flex={0.8}>
-                        <Label>vauruk@gmail.com</Label>
-                    </ColB>
-                </Row>
-                <Row>
-                    <ColA flex={0.2}>
-                        <IconVK name="github" size={30} />
-                    </ColA>
-                    <ColB flex={0.8}>
-                        <LabelLink onPress={() => handlePress()}>
-                            {gitHub}
-                        </LabelLink>
-                    </ColB>
-                </Row>
-                <ActivityIndicatorVK size="large" />
-            </Content>
-        </Container>
-    );
+    return <LottieView source={require('./lottie2.json')} autoPlay loop />;
+    // <Container>
+    //     <Content>
+    //         <ImageVK source={vanderson} width={250} height={300} />
+    //         <Title>Vanderson de Moura Vauruk</Title>
+    //         <Row>
+    //             <ColA flex={0.2}>
+    //                 <IconVK name="at" size={30} />
+    //             </ColA>
+    //             <ColB flex={0.8}>
+    //                 <Label>vauruk@gmail.com</Label>
+    //             </ColB>
+    //         </Row>
+    //         <Row>
+    //             <ColA flex={0.2}>
+    //                 <IconVK name="github" size={30} />
+    //             </ColA>
+    //             <ColB flex={0.8}>
+    //                 <LabelLink onPress={() => handlePress()}>
+    //                     {gitHub}
+    //                 </LabelLink>
+    //             </ColB>
+    //         </Row>
+    //         <ActivityIndicatorVK size="large" />
+
+    //     </Content>
+    // </Container>
+    //);
 };
 
 export default Splash;

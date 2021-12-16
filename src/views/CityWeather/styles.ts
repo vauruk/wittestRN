@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { Pressable } from 'react-native';
 import { ContainerVK, ImageVK, ScrollViewVK } from '../../components';
+import { ActivityIndicator } from 'react-native';
 
 const Container = styled(ContainerVK).attrs({})``;
 const ImageSignVK = styled(ImageVK).attrs({})`
@@ -23,4 +24,16 @@ const ScrollViewAppVk = styled(ScrollViewVK).attrs({})`
     background-color: ${(props: any) => props.theme.ligthGray};
 `;
 
-export { Container, ImageSignVK, ScrollViewAppVk, Content };
+const ActivityIndicatorVK = styled(ActivityIndicator).attrs(({ theme }) => ({
+    color: theme.primaryColor,
+}))`
+    margin-top: 300px;
+`;
+
+export {
+    Container,
+    ImageSignVK,
+    ScrollViewAppVk,
+    Content,
+    ActivityIndicatorVK,
+};
