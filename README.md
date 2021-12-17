@@ -1,3 +1,30 @@
+Usei nesse projeto:
+
+[Lottie Splash](https://github.com/lottie-react-native/lottie-react-native)
+
+[Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
+
+[React Navigation](https://reactnavigation.org/docs/getting-started/)
+
+[Styled Component](https://styled-components.com/docs/basics#react-native)
+
+[Open Weather](http://openweathermap.org/api)
+
+[Axios](https://github.com/axios/axios)
+
+
+### Run project
+``````
+yarn && yarn ios
+``````
+
+### Se necessário recomeçar tem um script para fazer clean no projeto
+````````
+yarn clean
+````````
+ 
+ 
+ 
  Downloading template
 ✔ Copying template
 ✔ Processing template
