@@ -13,12 +13,13 @@ Usei nesse projeto:
 [Axios](https://github.com/axios/axios)
 
 
-### Run project
+### Run project:
+
 ``````
 yarn && yarn ios
 ``````
 
-### Se necessário recomeçar tem um script para fazer clean no projeto
+### Se necessário recomeçar tem um script para fazer clean no projeto:
 ````````
 yarn clean
 ````````
