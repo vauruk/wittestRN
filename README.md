@@ -26,6 +26,15 @@ yarn clean
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #### Start do projeto
+ 
  Downloading template
 ✔ Copying template
 ✔ Processing template
@@ -47,15 +56,13 @@ yarn clean
 
 
 
-----
+#### Libs instaladas ultimas verões até dia 14/12/2021
 
 Create this project 
 
 yarn add @react-navigation/drawer @react-navigation/native @react-navigation/stack @reduxjs/toolkit axios react-native-config react-native-gesture-handler react-redux redux-flipper  styled-components crypto-js moment-timezone react-native-safe-area-context yarn add @react-native-async-storage/async-storage react-native-vector-icons react-native-reanimated
 
-
---------------------
-
+##### Descrição sobre como fazer o desafio
 
 Objectivos do Challenge
 Este challenge tem como objectivo a avaliação de React Native Engineer candidatos à WIT. Este
