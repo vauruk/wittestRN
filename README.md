@@ -12,6 +12,8 @@ Usei nesse projeto:
 
 [Axios](https://github.com/axios/axios)
 
+[TypeScript](https://www.typescriptlang.org/docs/)
+
 
 ### Run project:
 
