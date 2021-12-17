@@ -10,17 +10,10 @@ const meNoColor = css`
 const meColor = css`
     ${({ theme }) => theme.white}
 `;
-const colorSelector = (me: boolean) => {
-  if (me) {
-    return meNoColor;
-  } else {
-    return meColor;
-  }
-};
 
 const ContentVK = styled.View<Pick<Props>>`
     width: 100%;
-    border-width: 0.5px;
+    border-width: 0.4px;
     border-color: ${(props: any) => props.theme.ligthGrayColor};
 `;
 

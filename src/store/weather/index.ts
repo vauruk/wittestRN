@@ -17,10 +17,11 @@ export const fetchWeatherList = createAsyncThunk(
             const dataReturn = await WeatherService.getWheater(idCity);
             return dataReturn;
         } catch (error) {
-            const {
-                response: { data },
-            } = error;
-            return thunkAPI.rejectWithValue({ ...data });
+            console.log('Weather', error);
+            // const {
+            //     response: { data },
+            // } = error;
+            // return thunkAPI.rejectWithValue({ ...data });
         }
     },
 );

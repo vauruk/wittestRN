@@ -19,7 +19,7 @@ const routes: StackRoute[] = [
         options: {
             animationEnabled: true,
             headerShown: true,
-            headerTitle: 'City',
+            headerTitle: 'Cities',
             headerStyle: {
                 backgroundColor: color.primary,
             },
