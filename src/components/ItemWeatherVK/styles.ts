@@ -63,11 +63,15 @@ const ColAction = styled(ColVK)`
     justify-content: center;
 `;
 const Text = styled.Text`
-    color: ${(props: any) => props.theme.primary};
+    color: ${(props: any) => props.theme.primaryColor};
     font-size: ${(props: any) => props.theme.text.fontSize}px;
 `;
+const TextDay = styled.Text`
+    color: ${(props: any) => props.theme.primaryColor};
+    font-size: ${(props: any) => props.theme.title.fontSize}px;
+`;
 const TextTemp = styled.Text`
-    color: ${(props: any) => props.theme.text.color};
+    color: ${(props: any) => props.theme.blue};
     font-size: ${(props: any) => props.theme.title.fontSize}px;
 `;
 const TextHumidity = styled.Text`
@@ -80,6 +84,12 @@ const ViewHumidity = styled.View`
     padding: 5px;
     background-color: ${(props: any) => props.theme.red};
     border-radius: 20px;
+`;
+const ViewDay = styled.View`
+    width: 100%;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
 `;
 const ViewPk = styled.View``;
 const TextCreated = styled.Text`
@@ -111,10 +121,12 @@ align - items: flex - end;
 
 export {
     ContentVK,
+    ViewDay,
     IconVK,
     IconVK2,
     IconHumVK,
     ButtonIcon,
+    TextDay,
     Row,
     ColA,
     ColB,

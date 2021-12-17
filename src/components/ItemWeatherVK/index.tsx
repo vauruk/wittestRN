@@ -16,7 +16,9 @@ import {
     TextTemp,
     TextHumidity,
     ViewHumidity,
+    ViewDay,
     ViewPk,
+    TextDay,
 } from './styles';
 
 import moment from 'moment-timezone';
@@ -37,12 +39,34 @@ const ItemWeatherVK: React.FC<Props> = ({
         onDetail?.(item);
     };
 
+    const getWeekDay = (num: number) => {
+        switch (num) {
+            case 0:
+                return 'Sun';
+            case 1:
+                return 'Mon';
+            case 2:
+                return 'Tue';
+            case 3:
+                return 'Wed';
+            case 4:
+                return 'Thu';
+            case 5:
+                return 'Fri';
+            case 6:
+                return 'Sat';
+
+            default:
+                break;
+        }
+    };
+
     return (
         <>
             <TouchableHighlightPk onPress={_onDetail}>
                 <ContentVK testID={testID} style={style}>
                     <Row>
-                        <ColA flex={0.4}>
+                        <ColA flex={0.3}>
                             <IconVK
                                 name="thermometer-three-quarters"
                                 size={50}
@@ -71,7 +95,7 @@ const ItemWeatherVK: React.FC<Props> = ({
                                         <IconVK2 name="wind" size={25} />
                                     </ColA>
                                     <ColB flex={0.3}>
-                                        <Text>{item?.wind.speed}</Text>
+                                        <Text>{item?.wind.speed}m/s</Text>
                                     </ColB>
                                 </Row>
                             </>
@@ -89,7 +113,16 @@ const ItemWeatherVK: React.FC<Props> = ({
                                     </ColB>
                                 </Row>
                             </ViewHumidity>
-                            <Text>{moment(item?.dt_txt).format('DD/MM')}</Text>
+                            <ViewDay>
+                                <TextDay>
+                                    {moment(item?.dt_txt).format('DD')}
+                                </TextDay>
+                                <Text>
+                                    {getWeekDay(
+                                        moment(item?.dt_txt).weekday(),
+                                    )?.toUpperCase()}
+                                </Text>
+                            </ViewDay>
                         </ColC>
                     </Row>
                 </ContentVK>

@@ -13,8 +13,9 @@ if (__DEV__) {
 
 const rootStore = configureStore({
     reducer: rootReducer,
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middleware),
-    //   devTools: process.env.NODE_ENV !== 'production',
+    middleware: getDefaultMiddleware =>
+        getDefaultMiddleware().concat(middleware),
+    devTools: process.env.NODE_ENV !== 'production',
 });
 
 export type AppDispatch = typeof rootStore.dispatch;
