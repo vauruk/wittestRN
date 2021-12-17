@@ -26,20 +26,12 @@ yarn && yarn ios
 yarn clean
 ````````
  
- 
- 
- 
- 
  ####
- 
  Demo
  
-
 https://user-images.githubusercontent.com/12579082/146479064-fe830274-6893-414e-b38f-a683857fa7b5.mp4
 
 
- 
- 
  
  
  #### Start do projeto
